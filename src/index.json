@@ -1,0 +1,458 @@
+{
+    "id": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+    "name": "ranking-api",
+    "description": "",
+    "auth": null,
+    "events": [{
+        "listen": "prerequest",
+        "script": {
+            "id": "0067c08f-cbf1-4e9b-a8ec-be945a06cde6",
+            "type": "text\/javascript",
+            "exec": [""]
+        }
+    }, {
+        "listen": "test",
+        "script": {
+            "id": "a0f9001e-f238-4872-ba56-7ef5db73cc5e",
+            "type": "text\/javascript",
+            "exec": [""]
+        }
+    }],
+    "variables": [{
+        "key": "url",
+        "value": "http:\/\/api-navetest.herokuapp.com\/v1\n",
+        "description": "",
+        "type": "text",
+        "disabled": false
+    }, {
+        "key": "token",
+        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIyNGU1ZmNjOS1iMjI2LTQ0MTktODUzYy01M2VmMjI5OTg3ODgiLCJlbWFpbCI6Imp1bGlhbm9AbmF2ZS5ycyJ9LCJpYXQiOjE1NDA4NTk0MzR9.lB3wPTj-a8Jvk_rp2tAPjvkwnOwar6Db0iZKqFIjhY0",
+        "description": "",
+        "type": "text",
+        "disabled": false
+    }],
+    "order": ["411e245a-9f32-4f75-857e-4972e1c68028"],
+    "folders_order": ["6fb501ae-d40e-4064-9f9a-24db75d930c1", "1329dc66-21da-4db3-b037-5b67bcaa4067", "24ff078e-40ad-4e12-ab5b-a5ede6d7927a"],
+    "folders": [{
+        "id": "1329dc66-21da-4db3-b037-5b67bcaa4067",
+        "name": "championship",
+        "description": "",
+        "auth": null,
+        "events": null,
+        "collection": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "folder": null,
+        "order": ["380f272e-7a12-480a-ab03-7718297a9241", "47479236-56f2-4f43-9e6b-3d6fe6a6dfcf", "069556a6-a481-4790-9bd3-3a3461d2b96b", "dffb248f-861c-439e-af82-caade7313ba3", "f114be01-e382-44a6-85fc-0285c085a7b9"],
+        "folders_order": [],
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "folderId": "1329dc66-21da-4db3-b037-5b67bcaa4067"
+    }, {
+        "id": "24ff078e-40ad-4e12-ab5b-a5ede6d7927a",
+        "name": "matches",
+        "description": "",
+        "auth": null,
+        "events": null,
+        "collection": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "folder": null,
+        "order": ["7f1f8d79-7630-465e-9750-7d7eda75f84f", "91367b23-7396-4442-8c47-7611a6550549"],
+        "folders_order": [],
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "folderId": "24ff078e-40ad-4e12-ab5b-a5ede6d7927a"
+    }, {
+        "id": "6fb501ae-d40e-4064-9f9a-24db75d930c1",
+        "name": "users",
+        "description": "",
+        "auth": null,
+        "events": null,
+        "collection": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "folder": null,
+        "order": ["d9614aee-97dc-4bb9-847c-64b7875560a3", "772bdeac-223a-4b0a-b834-a73f0aecaed9", "98c942ed-5bf2-4983-9e17-7306aa7f4602", "aa09a521-6390-490c-803c-3ad11e4dd256", "3b0afa4f-8b4e-413b-b2df-02278f4b1752", "d89138df-72b5-4c5a-b7b5-bd91d4bd7f81", "aacc9a81-384d-40f8-8dd0-c0773c996e19"],
+        "folders_order": [],
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "folderId": "6fb501ae-d40e-4064-9f9a-24db75d930c1"
+    }],
+    "requests": [{
+        "id": "069556a6-a481-4790-9bd3-3a3461d2b96b",
+        "name": "Create a championship",
+        "url": "api-navetest.herokuapp.com\/v1\/championships",
+        "description": "",
+        "data": [],
+        "dataMode": "raw",
+        "headerData": [{
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }, {
+            "key": "Content-Type",
+            "value": "application\/json"
+        }],
+        "method": "POST",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": [],
+        "folder": "1329dc66-21da-4db3-b037-5b67bcaa4067",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "rawModeData": "{\n\t\"name\": \"Ta\u00e7a Nave\"\n}\n",
+        "headers": "Authorization: {{token}}\nContent-Type: application\/json\n",
+        "pathVariables": []
+    }, {
+        "id": "380f272e-7a12-480a-ab03-7718297a9241",
+        "name": "List all championships",
+        "url": "api-navetest.herokuapp.com\/v1\/championships",
+        "description": "",
+        "data": null,
+        "dataMode": "params",
+        "headerData": [{
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "GET",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": [],
+        "folder": "1329dc66-21da-4db3-b037-5b67bcaa4067",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "headers": "Authorization: {{token}}\n",
+        "pathVariables": []
+    }, {
+        "id": "3b0afa4f-8b4e-413b-b2df-02278f4b1752",
+        "name": "Delete a usuer",
+        "url": "{{url}}\/users\/5b3e94d4-ed9b-4cd4-a087-e84c60fc2439",
+        "description": "",
+        "data": null,
+        "dataMode": "params",
+        "headerData": [{
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "DELETE",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": [],
+        "folder": "6fb501ae-d40e-4064-9f9a-24db75d930c1",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "headers": "Authorization: {{token}}\n",
+        "pathVariables": []
+    }, {
+        "id": "411e245a-9f32-4f75-857e-4972e1c68028",
+        "name": "User logged",
+        "url": "{{url}}\/me",
+        "description": "",
+        "data": null,
+        "dataMode": "params",
+        "headerData": [{
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "GET",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": [],
+        "folder": null,
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "headers": "Authorization: {{token}}\n",
+        "pathVariables": []
+    }, {
+        "id": "47479236-56f2-4f43-9e6b-3d6fe6a6dfcf",
+        "name": "List all matches by championship",
+        "url": "api-navetest.herokuapp.com\/v1\/championships\/4859c864-bfd5-4e1a-9749-93f39a016237\/matches",
+        "description": "",
+        "data": null,
+        "dataMode": "params",
+        "headerData": [{
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "GET",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": [],
+        "folder": "1329dc66-21da-4db3-b037-5b67bcaa4067",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "headers": "Authorization: {{token}}\n",
+        "pathVariables": []
+    }, {
+        "id": "772bdeac-223a-4b0a-b834-a73f0aecaed9",
+        "name": "Login ",
+        "url": "{{url}}\/users\/login",
+        "description": "",
+        "data": [],
+        "dataMode": "raw",
+        "headerData": [{
+            "key": "Content-Type",
+            "value": "application\/json"
+        }],
+        "method": "POST",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": [],
+        "folder": "6fb501ae-d40e-4064-9f9a-24db75d930c1",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "rawModeData": "{\n\t\"email\":\"juliano@nave.rs\",\n\t\"password\":\"juliano123\"\n}",
+        "headers": "Content-Type: application\/json\n",
+        "pathVariables": []
+    }, {
+        "id": "7f1f8d79-7630-465e-9750-7d7eda75f84f",
+        "name": "List all matches",
+        "url": "api-navetest.herokuapp.com\/v1\/matches",
+        "description": "",
+        "data": null,
+        "dataMode": "params",
+        "headerData": [{
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "GET",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": [],
+        "folder": "24ff078e-40ad-4e12-ab5b-a5ede6d7927a",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "headers": "Authorization: {{token}}\n",
+        "pathVariables": []
+    }, {
+        "id": "91367b23-7396-4442-8c47-7611a6550549",
+        "name": "Include score",
+        "url": "api-navetest.herokuapp.com\/v1\/matches\/4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
+        "description": null,
+        "data": [],
+        "dataMode": "raw",
+        "headerData": [{
+            "key": "Content-Type",
+            "value": "application\/json"
+        }, {
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "PUT",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": null,
+        "folder": "24ff078e-40ad-4e12-ab5b-a5ede6d7927a",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "rawModeData": "{\n  \"score\":\"11 x 8\",\n  \"winner_id\":\"24e5fcc9-b226-4419-853c-53ef22998788\"\n}",
+        "headers": "Content-Type: application\/json\nAuthorization: {{token}}\n",
+        "pathVariables": []
+    }, {
+        "id": "98c942ed-5bf2-4983-9e17-7306aa7f4602",
+        "name": "List all users",
+        "url": "{{url}}\/v1\/users?ranking=true",
+        "description": null,
+        "data": null,
+        "dataMode": "params",
+        "headerData": [{
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "GET",
+        "pathVariableData": [],
+        "queryParams": [{
+            "key": "ranking",
+            "value": "true",
+            "equals": true,
+            "description": "",
+            "enabled": true
+        }],
+        "auth": null,
+        "events": [],
+        "folder": "6fb501ae-d40e-4064-9f9a-24db75d930c1",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "headers": "Authorization: {{token}}\n",
+        "pathVariables": []
+    }, {
+        "id": "aa09a521-6390-490c-803c-3ad11e4dd256",
+        "name": "Update a user",
+        "url": "{{url}}\/users\/24e5fcc9-b226-4419-853c-53ef22998788",
+        "description": "",
+        "data": [],
+        "dataMode": "raw",
+        "headerData": [{
+            "key": "Content-Type",
+            "value": "application\/json"
+        }, {
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "PUT",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": [],
+        "folder": "6fb501ae-d40e-4064-9f9a-24db75d930c1",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "rawModeData": "{\n\t\"name\":\"joao\",\n\t\"email\":\"joao@nave.rs\",\n\t\"password\":\"joao123\",\n\t\"rating\":\"1810\"\n}",
+        "headers": "Content-Type: application\/json\nAuthorization: {{token}}\n",
+        "pathVariables": []
+    }, {
+        "id": "aacc9a81-384d-40f8-8dd0-c0773c996e19",
+        "name": "List all matches",
+        "url": "api-navetest.herokuapp.com\/v1\/users\/10a5f5fb-b7a5-490e-9bc1-a3f96e511379\/Match",
+        "description": "",
+        "data": null,
+        "dataMode": "params",
+        "headerData": [{
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "GET",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": [],
+        "folder": "6fb501ae-d40e-4064-9f9a-24db75d930c1",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "headers": "Authorization: {{token}}\n",
+        "pathVariables": []
+    }, {
+        "id": "d89138df-72b5-4c5a-b7b5-bd91d4bd7f81",
+        "name": "List all championships",
+        "url": "api-navetest.herokuapp.com\/v1\/users\/10a5f5fb-b7a5-490e-9bc1-a3f96e511379\/Championship",
+        "description": "",
+        "data": null,
+        "dataMode": "params",
+        "headerData": [{
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "GET",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": [],
+        "folder": "6fb501ae-d40e-4064-9f9a-24db75d930c1",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "headers": "Authorization: {{token}}\n",
+        "pathVariables": []
+    }, {
+        "id": "d9614aee-97dc-4bb9-847c-64b7875560a3",
+        "name": "Create a user",
+        "url": "{{url}}\/v1\/users\/signup",
+        "description": null,
+        "data": [],
+        "dataMode": "raw",
+        "headerData": [{
+            "key": "Content-Type",
+            "value": "application\/json"
+        }],
+        "method": "POST",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": null,
+        "folder": "6fb501ae-d40e-4064-9f9a-24db75d930c1",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "rawModeData": "{\n  \"name\":\"juliano\",\n  \"email\":\"juliano@nave.rs\",\n  \"password\":\"juliano123\",\n  \"rating\":\"1800\"\n}",
+        "headers": "Content-Type: application\/json\n",
+        "pathVariables": []
+    }, {
+        "id": "dffb248f-861c-439e-af82-caade7313ba3",
+        "name": "Include a array of users",
+        "url": "api-navetest.herokuapp.com\/v1\/championships\/4859c864-bfd5-4e1a-9749-93f39a016237",
+        "description": "",
+        "data": [],
+        "dataMode": "raw",
+        "headerData": [{
+            "key": "Content-Type",
+            "value": "application\/json"
+        }, {
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "PUT",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": [],
+        "folder": "1329dc66-21da-4db3-b037-5b67bcaa4067",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "rawModeData": "{\n\t\"name\":\"Ta\u00e7a Nave\",\n\t\"users\": [\"24e5fcc9-b226-4419-853c-53ef22998788\", \"10a5f5fb-b7a5-490e-9bc1-a3f96e511379\"]\n}\n",
+        "headers": "Content-Type: application\/json\nAuthorization: {{token}}\n",
+        "pathVariables": []
+    }, {
+        "id": "f114be01-e382-44a6-85fc-0285c085a7b9",
+        "name": "Include one user",
+        "url": "api-navetest.herokuapp.com\/v1\/championships\/4859c864-bfd5-4e1a-9749-93f39a016237",
+        "description": null,
+        "data": [],
+        "dataMode": "raw",
+        "headerData": [{
+            "key": "Content-Type",
+            "value": "application\/json"
+        }, {
+            "key": "Authorization",
+            "value": "{{token}}",
+            "description": "",
+            "enabled": true
+        }],
+        "method": "PATCH",
+        "pathVariableData": [],
+        "queryParams": [],
+        "auth": null,
+        "events": null,
+        "folder": "1329dc66-21da-4db3-b037-5b67bcaa4067",
+        "currentHelper": null,
+        "helperAttributes": null,
+        "collectionId": "800b7488-712f-4ccb-a49c-5d6a99e99f57",
+        "rawModeData": "{\n  \"user\": \"15e25264-7244-4331-86dc-064cf8e44743\"\n}",
+        "headers": "Content-Type: application\/json\nAuthorization: {{token}}\n",
+        "pathVariables": []
+    }]
+}

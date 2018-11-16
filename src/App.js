@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+// import Axios from 'axios';
 import './App.css';
+
+// const PokeAPI = 'https://pokeapi.co/api/v2/';
+// const Url = 'http://api-navetest.herokuapp.com/v1/';
+// const Url_user = 'http://api-navetest.herokuapp.com/v1/users/';
+// const customData;
 
 class App extends Component {
 
@@ -15,29 +21,19 @@ class App extends Component {
     e.preventDefault();
     const form = {
       name: this.state.name.value,
-      password: this.state.password.value
+      password: this.state.password.value,
+      email: this.state.email.value
     }
-    console.log(form);
+  }
+
+  onSignIn(e) {
+    e.preventDefault();
+    console.log(e);
   }
   
-  render() {
-    return (
-      <section className="container-login">
-        <h1>Login</h1>
-        <div className="row">
-          <label>Username:</label>
-          <input type="text" className="field" ref={(e) => this.state.name = e} />
-        </div>
-        <div className="row">
-          <label>Password:</label>
-          <input type="password" className="field" ref={(e) => this.state.password = e} />
-        </div>
-        <div className="row">
-          <button typ="button" className="button" onClick={ (e) => this.onSubmit(e) }>Confirm</button>
-        </div>
-      </section>
-    );
-  }
+  // render() {
+  //   return ();
+  // }
 }
 
 export default App;

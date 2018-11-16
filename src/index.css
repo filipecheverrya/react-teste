@@ -8,7 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .container-login {
-  max-width: 641px;
+  max-width: 600px;
   width: 100%;
   margin: 0 auto;
   height: 100%;
@@ -31,6 +31,7 @@ body {
 .container-login .row label {
   margin-right: 15px;
   font-size: 24px;
+  width: 150px;
   font-family: Arial, Helvetica, sans-serif;
 }
 .container-login .row .field {
