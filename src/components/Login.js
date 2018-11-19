@@ -33,7 +33,7 @@ class Login extends Component {
   render() {
     return (
         <section className="container-login">
-            <h1>Sign Up</h1>
+            <h1>Login</h1>
             <div className="row">
                 <label>Username:</label>
                 <input type="text" className="field" ref={(e) => this.state.name = e} />
