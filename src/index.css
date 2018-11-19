@@ -16,7 +16,7 @@ body {
   align-items: center;
   flex-direction: column;
 }
-.container-login > h1 {
+.container-login h1 {
   font-size: 32px;
 }
 .container-login .row {
@@ -53,6 +53,26 @@ body {
   width: 150px;
   height: 50px;
 }
-.button:focus {
+/* .button:focus {
   outline: none;
+} */
+
+@media screen and (max-width: 769px) {
+  .container-login {
+    width: calc(100% - 20px);
+    padding: 0 20px;
+    align-items: flex-start;
+  }
+  .container-login .row {
+    padding: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .container-login .row label {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .container-login .row .field {
+    width: 90%;
+  }
 }

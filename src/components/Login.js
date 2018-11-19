@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 // import './App.css';
 // const cadastro = 'http://api-navetest.herokuapp.com/v1/users/signup'
-const cadastro = 'http://api-navetest.herokuapp.com/v1/users?ranking=true'
+// const cadastro = 'http://api-navetest.herokuapp.com/v1/users?ranking=true'
+const cadastro = 'http://api-navetest.herokuapp.com/v1/users/login'
 
-class SignUp extends Component {
+class Login extends Component {
 
   constructor(props) {
     super(props);
@@ -14,24 +15,20 @@ class SignUp extends Component {
     };
   }
 
-  saveInformation(e) {
+  compareInformation(e) {
     e.preventDefault();
+    
     const form = {
       name: this.state.name.value,
-      password: this.state.password.value,
-      email: this.state.email.value
+      password: this.state.password.value
     }
-    Axios.get(cadastro)
+    
+    console.log(form);
+
+    Axios.post(cadastro, form)
     .then(data=>console.log(data))
     .catch(err=>console.log(err))
-    console.log(cadastro);
-    
   }
-
-//   onSignIn(e) {
-//     e.preventDefault();
-//     console.log(e);
-//   }
   
   render() {
     return (
@@ -46,17 +43,11 @@ class SignUp extends Component {
                 <input type="password" className="field" ref={(e) => this.state.password = e} />
             </div>
             <div className="row">
-                <label>Email:</label>
-                <input type="email" className="field" ref={(e) => this.state.email = e} />
-            </div>
-            <div className="row">
-                <button typ="button" className="button" onClick={ (e) => this.saveInformation(e) }>Confirm</button>
+                <button typ="button" className="button" onClick={ (e) => this.compareInformation(e) }>Confirm</button>
             </div>
         </section>
     );
-    // console.log(form);
-    
   }
 }
 
-export default SignUp;
+export default Login;
