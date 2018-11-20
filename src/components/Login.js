@@ -10,7 +10,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      email: "",
       password: ""
     };
   }
@@ -19,10 +19,9 @@ class Login extends Component {
     e.preventDefault();
     
     const form = {
-      name: this.state.name.value,
+      email: this.state.email.value,
       password: this.state.password.value
     }
-    
     console.log(form);
 
     Axios.post(cadastro, form)
@@ -35,8 +34,8 @@ class Login extends Component {
         <section className="container-login">
             <h1>Login</h1>
             <div className="row">
-                <label>Username:</label>
-                <input type="text" className="field" ref={(e) => this.state.name = e} />
+                <label>Email:</label>
+                <input type="email" className="field" ref={(e) => this.state.email = e} />
             </div>
             <div className="row">
                 <label>Password:</label>

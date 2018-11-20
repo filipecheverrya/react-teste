@@ -1,13 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './index.css';
-// import App from './App';
-// import SignUp from './components/SignUp';
-import Login from './components/Login';
 import * as serviceWorker from './serviceWorker';
 
+import Index from './App';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
+
 ReactDOM.render(
-    <Login />, 
+    <Router>
+    <main>
+        <nav className="main-nav">
+            <ul className="list">
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/signup/">Sign up</Link>
+                </li>
+                <li>
+                    <Link to="/login/">Login</Link>
+                </li>
+            </ul>
+        </nav>
+
+      <Route path="/" exact component={Index} />
+      <Route path="/signup/" component={SignUp} />
+      <Route path="/login/" component={Login} />
+    </main>
+  </Router>, 
     document.getElementById('root')
 );
 

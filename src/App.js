@@ -9,31 +9,35 @@ import './App.css';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      password: ""
-    };
-  }
-
-  onSubmit(e) {
-    e.preventDefault();
-    const form = {
-      name: this.state.name.value,
-      password: this.state.password.value,
-      email: this.state.email.value
-    }
-  }
-
-  onSignIn(e) {
-    e.preventDefault();
-    console.log(e);
-  }
-  
-  // render() {
-  //   return ();
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     name: "",
+  //     password: ""
+  //   };
   // }
+
+  // onSubmit(e) {
+  //   e.preventDefault();
+  //   const form = {
+  //     name: this.state.name.value,
+  //     password: this.state.password.value,
+  //     email: this.state.email.value
+  //   }
+  // }
+
+  // onSignIn(e) {
+  //   e.preventDefault();
+  //   console.log(e);
+  // }
+  
+  render() {
+    return (
+      <section className="container-home">
+        <h1>teste home</h1>
+      </section>
+    );
+  }
 }
 
 export default App;
