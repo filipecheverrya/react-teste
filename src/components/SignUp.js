@@ -10,44 +10,38 @@ class SignUp extends Component {
     super(props);
     this.state = {
       name: "",
-      password: ""
+      password: "",
+      email: ""
     };
   }
 
   saveInformation(e) {
     e.preventDefault();
     const form = {
-      name: this.state.name.value,
-      password: this.state.password.value,
-      email: this.state.email.value
+      name: this.user.value,
+      password: this.pass.value,
+      email: this.email.value
     }
-    Axios.get(cadastro)
+    Axios.get(cadastro, form)
     .then(data=>console.log(data))
-    .catch(err=>console.log(err))
-    console.log(cadastro);
-    
+    .catch(err=>console.log(err))    
   }
 
-//   onSignIn(e) {
-//     e.preventDefault();
-//     console.log(e);
-//   }
-  
   render() {
     return (
         <section className="container-login">
             <h1>Sign Up</h1>
             <div className="row">
-                <label>Username:</label>
-                <input type="text" className="field" ref={(e) => this.state.name = e} />
+                <label>Email:</label>
+                <input type="email" className="field" ref={(email) => this.email = email} />
             </div>
             <div className="row">
                 <label>Password:</label>
-                <input type="password" className="field" ref={(e) => this.state.password = e} />
+                <input type="password" className="field" ref={(pass) => this.pass = pass} />
             </div>
             <div className="row">
-                <label>Email:</label>
-                <input type="email" className="field" ref={(e) => this.state.email = e} />
+                <label>Username:</label>
+                <input type="text" className="field" ref={(user) => this.user = user} />
             </div>
             <div className="row">
                 <button typ="button" className="button" onClick={ (e) => this.saveInformation(e) }>Confirm</button>
