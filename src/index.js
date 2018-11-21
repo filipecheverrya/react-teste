@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-import Index from './App';
+import Index from './Home';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
+import ListAllUsers from './components/ListAllUsers';
 
 ReactDOM.render(
     <Router>
@@ -20,6 +21,9 @@ ReactDOM.render(
                     <Link to="/signup/">Sign up</Link>
                 </li>
                 <li>
+                    <Link to="/list-all-users/">List all users</Link>
+                </li>
+                <li>
                     <Link to="/login/">Login</Link>
                 </li>
             </ul>
@@ -28,6 +32,7 @@ ReactDOM.render(
       <Route path="/" exact component={Index} />
       <Route path="/signup/" component={SignUp} />
       <Route path="/login/" component={Login} />
+      <Route path="/list-all-users/" component={ListAllUsers} />
     </main>
   </Router>, 
     document.getElementById('root')

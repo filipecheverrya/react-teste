@@ -23,14 +23,14 @@ class Login extends Component {
     }
     console.log(form);
     
-    Axios.post(login_URL)
+    Axios.post(login_URL, form)
     .then(data=>console.log(data))
     .catch(err=>console.log(err))
   }
   
   render() {
     return (
-        <section className="container-login">
+        <section className="container-default">
             <h1>Login</h1>
             <div className="row">
                 <label>Email:</label>
