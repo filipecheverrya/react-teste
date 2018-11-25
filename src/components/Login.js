@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-// import './App.css';
-// const cadastro = 'http://api-navetest.herokuapp.com/v1/users/signup'
-// const cadastro = 'http://api-navetest.herokuapp.com/v1/users?ranking=true'
 const login_URL = 'http://api-navetest.herokuapp.com/v1/users/login'
+
+function handlerLogged() {
+  console.log('loggo mlk, boa')
+}
+
+function handlerError() {
+  console.log('deu ruim doido')
+}
 
 class Login extends Component {
 
@@ -22,9 +27,11 @@ class Login extends Component {
       password: this.pass.value
     }
     console.log(form);
-    
     Axios.post(login_URL, form)
-    .then(data=>console.log(data))
+    .then(response=>{
+      response.status === 200 ? handlerLogged() : handlerError()
+      console.log(response)
+    })
     .catch(err=>console.log(err))
   }
   
