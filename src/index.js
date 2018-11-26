@@ -8,6 +8,7 @@ import Index from './Home';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import ListAllUsers from './components/ListAllUsers';
+import HomeLogged from './components/HomeLogged';
 
 ReactDOM.render(
     <Router>
@@ -33,6 +34,7 @@ ReactDOM.render(
       <Route path="/signup/" component={SignUp} />
       <Route path="/login/" component={Login} />
       <Route path="/list-all-users/" component={ListAllUsers} />
+      <Route path="/logged/" component={HomeLogged} />
     </main>
   </Router>, 
     document.getElementById('root')

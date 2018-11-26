@@ -71,6 +71,22 @@ h1 {
   width: 150px;
   height: 50px;
 }
+.logged-message {
+  display: none;
+  border: 2px solid forestgreen;
+  background-color: lightgreen;
+  color: forestgreen;
+  text-align: center;
+  width: 140px;
+  margin: 25px auto;
+  padding: 20px 20px;
+  border-radius: 15px;
+  font-size: 25px;
+  font-weight: 700;
+}
+.logged-message.on {
+  display: block;
+}
 /* .button:focus {
   outline: none;
 } */

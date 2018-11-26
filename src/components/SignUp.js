@@ -28,7 +28,7 @@ class SignUp extends Component {
 
   render() {
     return (
-        <section className="container-default">
+        <section className="container-default" id="pg-signup">
             <h1>Sign Up</h1>
             <div className="row">
                 <label>Email:</label>

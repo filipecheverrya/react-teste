@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 import Axios from 'axios';
 const login_URL = 'http://api-navetest.herokuapp.com/v1/users/login'
 
-function handlerLogged() {
-  console.log('loggo mlk, boa')
+function handlerLogged(key) {
+  const userID = key;
+  console.log(userID)
+  $('.form-login').fadeOut(600, () => {
+    $('.logged-message').addClass('on')
+  })
 }
 
 function handlerError() {
@@ -28,8 +33,8 @@ class Login extends Component {
     }
     console.log(form);
     Axios.post(login_URL, form)
-    .then(response=>{
-      response.status === 200 ? handlerLogged() : handlerError()
+    .then(response => {
+      response.status === 200 ? handlerLogged(response.data.id) : handlerError()
       console.log(response)
     })
     .catch(err=>console.log(err))
@@ -37,7 +42,8 @@ class Login extends Component {
   
   render() {
     return (
-        <section className="container-default">
+        <section className="container-default" id="pg-login">
+          <form className="form-login">
             <h1>Login</h1>
             <div className="row">
                 <label>Email:</label>
@@ -52,6 +58,8 @@ class Login extends Component {
                   Confirm
                 </button>
             </div>
+          </form>
+          <div className="logged-message">Logged</div>
         </section>
     );
   }
