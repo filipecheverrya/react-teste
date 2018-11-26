@@ -7,7 +7,6 @@ import * as serviceWorker from './serviceWorker';
 import Index from './Home';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
-import ListAllUsers from './components/ListAllUsers';
 import HomeLogged from './components/HomeLogged';
 
 ReactDOM.render(
@@ -22,9 +21,6 @@ ReactDOM.render(
                         <Link to="/signup/">Sign up</Link>
                     </li>
                     <li>
-                        <Link to="/list-all-users/">List all users</Link>
-                    </li>
-                    <li>
                         <Link to="/login/">Login</Link>
                     </li>
                 </ul>
@@ -33,8 +29,7 @@ ReactDOM.render(
             <Route path="/" exact component={Index} />
             <Route path="/signup/" component={SignUp} />
             <Route path="/login/" component={Login} />
-            <Route path="/list-all-users/" component={ListAllUsers} />
-            <Route path="/logged/" component={HomeLogged} />
+            <Route path="/me/" component={HomeLogged} />
         </main>
     </Router>, 
     document.getElementById('root')

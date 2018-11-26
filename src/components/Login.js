@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
 import Axios from 'axios';
 const login_URL = 'http://api-navetest.herokuapp.com/v1/users/login'
 const logged_URL = 'http://api-navetest.herokuapp.com/v1/me'
@@ -15,14 +15,14 @@ function handlerLogged(key, token) {
             "Authorization": "Bearer " + tokenID
           }
         };
-  // faz o form desaparecer e aparece uma msg de sucesso
-  $('.form-login').fadeOut(600, () => {
-    $('.logged-message').addClass('on')
-  })
-  
+  window.sessionStorage.setItem('token', tokenID)
   Axios.get(logged_URL, config)
   .then(resp=>{
-    resp.status === 200 ? window.location = now_URL+'logged/' : console.log(resp);
+    if (resp.status === 200) {
+      window.location = now_URL+'me/'
+    } else {
+      console.log(resp);
+    }
   })
   .catch(err=>console.log(err))
 }
