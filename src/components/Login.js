@@ -2,13 +2,24 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import Axios from 'axios';
 const login_URL = 'http://api-navetest.herokuapp.com/v1/users/login'
+const logged_URL = 'http://api-navetest.herokuapp.com/v1/me'
 
-function handlerLogged(key) {
-  const userID = key;
-  console.log(userID)
+function handlerLogged(key, token) {
+  const userID = key,
+        tokenID = token,
+        config = {
+          headers: {
+            "content-type": "application/json; charset=utf-8",
+            "Authorization": "Bearer " + tokenID
+          }
+        };
+  // faz o form desaparecer e aparece uma msg de sucesso
   $('.form-login').fadeOut(600, () => {
     $('.logged-message').addClass('on')
   })
+  Axios.get(logged_URL, config)
+  .then(resp=>console.log(resp))
+  .catch(err=>console.log(err))
 }
 
 function handlerError() {
@@ -31,10 +42,9 @@ class Login extends Component {
       email: this.email.value,
       password: this.pass.value
     }
-    console.log(form);
     Axios.post(login_URL, form)
     .then(response => {
-      response.status === 200 ? handlerLogged(response.data.id) : handlerError()
+      response.status === 200 ? handlerLogged(response.data.id, response.data.token) : handlerError()
       console.log(response)
     })
     .catch(err=>console.log(err))
