@@ -5,7 +5,7 @@ class HomeLogged extends Component {
   render() {
     return (
         <section className="container-default" id="pg-logged">
-            <h1>Login</h1>
+          <h1>Login</h1>
         </section>
     );
   }

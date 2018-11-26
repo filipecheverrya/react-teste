@@ -12,31 +12,31 @@ import HomeLogged from './components/HomeLogged';
 
 ReactDOM.render(
     <Router>
-    <main>
-        <nav className="main-nav">
-            <ul className="list">
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/signup/">Sign up</Link>
-                </li>
-                <li>
-                    <Link to="/list-all-users/">List all users</Link>
-                </li>
-                <li>
-                    <Link to="/login/">Login</Link>
-                </li>
-            </ul>
-        </nav>
+        <main>
+            <nav className="main-nav">
+                <ul className="list">
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/signup/">Sign up</Link>
+                    </li>
+                    <li>
+                        <Link to="/list-all-users/">List all users</Link>
+                    </li>
+                    <li>
+                        <Link to="/login/">Login</Link>
+                    </li>
+                </ul>
+            </nav>
 
-      <Route path="/" exact component={Index} />
-      <Route path="/signup/" component={SignUp} />
-      <Route path="/login/" component={Login} />
-      <Route path="/list-all-users/" component={ListAllUsers} />
-      <Route path="/logged/" component={HomeLogged} />
-    </main>
-  </Router>, 
+            <Route path="/" exact component={Index} />
+            <Route path="/signup/" component={SignUp} />
+            <Route path="/login/" component={Login} />
+            <Route path="/list-all-users/" component={ListAllUsers} />
+            <Route path="/logged/" component={HomeLogged} />
+        </main>
+    </Router>, 
     document.getElementById('root')
 );
 

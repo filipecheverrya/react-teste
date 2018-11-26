@@ -5,8 +5,10 @@ const login_URL = 'http://api-navetest.herokuapp.com/v1/users/login'
 const logged_URL = 'http://api-navetest.herokuapp.com/v1/me'
 
 function handlerLogged(key, token) {
-  const userID = key,
-        tokenID = token,
+  const tokenID = token,
+        //userID = key,
+        rgx = '.*(?=login/)',
+        now_URL = window.location.href.match(rgx),
         config = {
           headers: {
             "content-type": "application/json; charset=utf-8",
@@ -17,8 +19,11 @@ function handlerLogged(key, token) {
   $('.form-login').fadeOut(600, () => {
     $('.logged-message').addClass('on')
   })
+  
   Axios.get(logged_URL, config)
-  .then(resp=>console.log(resp))
+  .then(resp=>{
+    resp.status === 200 ? window.location = now_URL+'logged/' : console.log(resp);
+  })
   .catch(err=>console.log(err))
 }
 
@@ -44,7 +49,11 @@ class Login extends Component {
     }
     Axios.post(login_URL, form)
     .then(response => {
-      response.status === 200 ? handlerLogged(response.data.id, response.data.token) : handlerError()
+      if (response.status === 200) {
+        handlerLogged(response.data.id, response.data.token)
+      } else {
+        handlerError()
+      }
       console.log(response)
     })
     .catch(err=>console.log(err))
